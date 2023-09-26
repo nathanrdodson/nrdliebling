@@ -1,0 +1,41 @@
+{{!-- This block preloads specific assets for the post page --}}
+{{#contentFor "preload"}}
+  <link rel="preload" href="{{asset "css/post.css"}}" as="style" />
+  <link rel="preload" href="{{asset "js/post.js"}}" as="script" />
+{{/contentFor}}
+
+{{!-- This block loads specific styles for the post page --}}
+{{#contentFor "styles"}}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/post.css"}}" media="screen" />
+{{/contentFor}}
+
+{{#get "posts" slug="nathan" as |post|}}
+	<article>
+		<div class="l-content in-post">
+			{{#post}}
+			<div class="l-wrapper in-post js-animation-wrapper">
+				<div class="l-post-content js-progress-content">
+					<div class="pos-relative js-post-content">
+						<div class="m-share">
+							<div class="m-share__content">
+								<button class="m-icon-button filled in-share progress js-scrolltop" aria-label="{{t "Scroll to top"}}">
+									<span class="icon-arrow-top" aria-hidden="true"></span>
+									<svg aria-hidden="true">
+										<circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
+									</svg>
+								</button>
+							</div>
+						</div>
+						{{content}}
+					</div>
+				</div>
+			</div>
+			{{/post}}
+		</div>
+	</article>
+{{/get}}
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+  <script defer src="{{asset "js/post.js"}}"></script>
+{{/contentFor}}
