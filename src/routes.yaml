@@ -2,6 +2,7 @@ routes:
   /tech/:
     permalink: /t/{slug}/
     template: posts
+    
   /photo/:
     permalink: /p/{slug}/
     template: photos
