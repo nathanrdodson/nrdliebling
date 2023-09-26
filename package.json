@@ -46,21 +46,6 @@
       "disable_fade_animation": {
         "type": "boolean",
         "default": false
-      },
-      "use_custom_cta": {
-        "type": "boolean",
-        "default": false,
-        "group": "homepage"
-      },
-      "custom_cta_text": {
-        "type": "text",
-        "default": "Subscribe",
-        "group": "homepage"
-      },
-      "custom_cta_url": {
-        "type": "text",
-        "default": "/newsletter",
-        "group": "homepage"
       }
     }
   },
