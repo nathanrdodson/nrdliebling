@@ -7,10 +7,21 @@
 {{!-- This block loads specific styles for the post page --}}
 {{#contentFor "styles"}}
   <link rel="stylesheet" type="text/css" href="{{asset "css/post.css"}}" media="screen" />
+	<style>
+		.img-container {
+			display: flex;
+			justify-content: center;
+			height: 250px;
+		}
+		.pad {
+			height: 100px;
+		} 
+	</style>
 {{/contentFor}}
 
 {{#get "posts" slug="nathan" as |post|}}
 	<article>
+		<div class="pad"></div>
 		<div class="l-content in-post">
 			{{#post}}
 			<div class="l-wrapper in-post js-animation-wrapper">
@@ -26,6 +37,7 @@
 								</button>
 							</div>
 						</div>
+						<img class="img-container" src="{{asset 'images/profile.png'}}"/>
 						{{content}}
 					</div>
 				</div>
