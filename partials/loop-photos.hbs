@@ -1,5 +1,5 @@
-{{#get "posts" filter="featured:true+tags:'#photography'" include="authors,tags" limit="5" as |feat|}}
-{{#get "posts" filter="featured:false+tags:'#photography'" include="authors,tags" as |posts|}}
+{{#get "posts" filter="featured:true+tag:[photography]" include="authors,tags" limit="5" order="published_at desc" as |feat|}}
+{{#get "posts" filter="featured:false+tag:[photography]" include="authors,tags" order="published_at desc" as |posts|}}
 {{#if feat}}
 	<div class="m-featured-slider swiper js-featured-slider">
 		<div class="m-featured-slider__list swiper-wrapper">
