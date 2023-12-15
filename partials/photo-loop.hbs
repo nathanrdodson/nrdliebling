@@ -1,11 +1,10 @@
-{{#get "posts" filter="featured:true+tag:hash-photo-gallery" include="authors,tags" as |feat|}}
-
+{{#get "posts" filter="tag:hash-photo-gallery" as |gallery|}}
 <div class="gallery">
 	<div class="gallery-item" id="photo-blurb" data-animate='fade-down'>
 		{{> photo-blurb}}
 	</div>
 	<div id="photo-list">
-		{{#foreach feat}}
+		{{#foreach gallery}}
 			<style>
 				#featured-bg-{{id}} { content: url({{img_url feature_image}});}
 			</style>
