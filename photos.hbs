@@ -1,41 +1,66 @@
 {{!--
-This template is used for the index page.
+This template is used for this page.
 It can be used also as the home page or the default page.
 --}}
 
-{{!-- This block preloads specific assets for the index page --}}
+{{!-- This block preloads specific assets for this page --}}
 {{#contentFor "preload"}}
 	<link rel="preload" href="{{asset "css/home.css"}}" as="style" />
 	<link rel="preload" href="{{asset "css/listing.css"}}" as="style" />
 	<link rel="preload" href="{{asset "js/home.js"}}" as="script" />
 {{/contentFor}}
 
-{{!-- This block loads specific styles for the index page --}}
+{{!-- This block loads specific styles for this page --}}
 {{#contentFor "styles"}}
 	<link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}" media="screen" />
 	<link rel="stylesheet" type="text/css" href="{{asset "css/listing.css"}}" media="screen" />
+	<link rel="stylesheet" href="https://use.typekit.net/eyj8xkd.css">
 {{/contentFor}}
 
-{{!-- The tag below means: insert everything in this file
-into the {body} of the default.hbs template --}}
 {{!< default}}
 
-{{!-- Special header.hbs partial to generate the <header> tag --}}
-{{> header background=@site.cover_image}}
-
 <main class="main-wrap">
-	{{> hero}}
-	<div class="l-content">
-		<div class="l-wrapper" data-animate="fade-up">
-			<div class="l-grid centered">
-				{{!-- The tag below iterates over all the posts --}}
-				{{> "loop-photos"}}
-      		</div>
-		</div>
-	</div>
+	{{> "photo-loop"}}
 </main>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
 	<script defer src="{{asset "js/home.js"}}"></script>
+	<script src="{{asset "js/vendor.js"}}"></script>
+	<script src="{{asset "js/helpers.js"}}"></script>
+	<script>
+		// The following block will reorder the default list of photos such that the (2) columns
+		// each are as close in height as possible. This fixes situations where the default order
+		// produces relatively off-balance columns.
+
+		// calculate reorder
+		function calculateReorder() {
+			var photos = document.getElementById("photo-list"); // element wrapper containing all the photos
+			var col1 = document.createDocumentFragment();
+			var col2 = document.createDocumentFragment();
+			
+			var col1Sum = 0;
+			var col2Sum = 0;
+			
+			for (const child of photos.children) { // iterate to calculate order based on offsetHeight
+				var h = child;
+				if(col1Sum < col2Sum) {
+					col1Sum += h.offsetHeight;
+					col1.appendChild(h.cloneNode(true));
+				} else {
+					col2Sum += h.offsetHeight;
+					col2.appendChild(h.cloneNode(true));
+				}
+			}
+			
+			// apply reorder to DOM
+			photos.innerHTML = ""; // reset element with new order
+			photos.appendChild(col1);
+			photos.appendChild(col2);
+			
+			console.log("Done reordering!");
+		}
+
+		window.onresize = calculateReorder();
+	</script>
 {{/contentFor}}

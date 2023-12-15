@@ -1,0 +1,13 @@
+{{#get "posts" filter="tag:[hash-photo-blurb]" as |post|}}
+	{{#post}}
+	<div class="gallery-blurb-title noselect">
+		{{title}}
+	</div>
+	<div class="gallery-blurb-content">
+		<p>{{content}}</p>
+	</div>
+	<div class="gallery-blurb-nav">
+		<p>Or, <a href="{{@site.url}}"><u>take me home</u></a>.</p>
+	</div>
+	{{/post}}
+{{/get}}

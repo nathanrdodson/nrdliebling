@@ -1,0 +1,18 @@
+{{#get "posts" filter="featured:true+tag:[photography]" include="authors,tags" order="published_at desc" as |feat|}}
+
+<div class="gallery">
+	<div class="gallery-item" id="photo-blurb" data-animate='fade-down'>
+		{{> photo-blurb}}
+	</div>
+	<div id="photo-list">
+		{{#foreach feat}}
+			<style>
+				#featured-bg-{{id}} { content: url({{img_url feature_image}});}
+			</style>
+			<div class="gallery-item" data-animate='fade-up'>
+				<img id="featured-bg-{{id}}"></img>
+			</div>
+		{{/foreach}}
+	</div>
+</div>
+{{/get}}

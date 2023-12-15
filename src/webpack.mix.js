@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const sassGlobImporter = require('node-sass-glob-importer');
 
 mix.options({
   terser: {
@@ -14,7 +15,11 @@ mix
   .js('js/post.js', 'js/')
   .js('js/page.js', 'js/')
   .extract()
-  .sass('sass/app.scss', 'css/')
+  .sass('sass/app.scss', 'css/', {
+	sassOptions: {
+		importer: sassGlobImporter(),
+	}
+  })
   .sass('sass/home.scss', 'css/')
   .sass('sass/listing.scss', 'css/')
   .sass('sass/post.scss', 'css/')
@@ -32,5 +37,5 @@ mix
       '../**/*.hbs'
     ]
   })
-  .copyDirectory('sass/fonts/source-sans-pro/', '../assets/fonts/source-sans-pro/')
+  .copyDirectory('sass/fonts/rubik/', '../assets/fonts/rubik/')
   .copy('sass/fonts/icomoon/*.*', '../assets/fonts/icomoon/');
