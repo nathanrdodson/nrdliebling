@@ -30,7 +30,7 @@ mix
     processCssUrls: false
   })
   .browserSync({
-    proxy: 'localhost:2368',
+    proxy: '127.0.0.1:2368/',
     files: [
       '../assets/js/**/*.js',
       '../assets/css/**/*.css',

@@ -107,6 +107,10 @@
   align-items: center;
   justify-content: flex-end;
 
+  i {
+	padding-left: 10px;
+  }
+
   @include respond-to('medium') {
     flex-shrink: 0;
     position: relative;

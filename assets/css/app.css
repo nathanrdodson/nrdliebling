@@ -2344,6 +2344,9 @@ div.gh-announcement-bar {
   align-items: center;
   justify-content: flex-end;
 }
+.m-nav__right i {
+  padding-left: 10px;
+}
 @media only screen and (min-width: 48rem) {
   .m-nav__right {
     flex-shrink: 0;
