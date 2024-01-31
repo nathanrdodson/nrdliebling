@@ -1060,11 +1060,11 @@ fieldset {
     display: inline;
   }
 }
-.m-footer-copyright span:nth-child(2) {
+.m-footer-copyright span:nth-child(2n) {
   display: none;
 }
 @media only screen and (min-width: 48rem) {
-  .m-footer-copyright span:nth-child(2) {
+  .m-footer-copyright span:nth-child(2n) {
     display: inline;
   }
 }

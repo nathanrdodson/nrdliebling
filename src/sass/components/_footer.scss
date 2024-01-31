@@ -44,7 +44,7 @@
       display: inline;
     }
 
-    &:nth-child(2) {
+    &:nth-child(2n) {
       display: none;
 
       @include respond-to('medium') {
