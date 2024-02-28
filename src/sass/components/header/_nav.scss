@@ -107,9 +107,13 @@
   align-items: center;
   justify-content: flex-end;
 
-  i {
-	padding-left: 10px;
-  }
+	a {
+		display: flex;
+		i {
+			padding: 0 7px;
+			font-size: 1.5em;
+		}
+	}	
 
   @include respond-to('medium') {
     flex-shrink: 0;
