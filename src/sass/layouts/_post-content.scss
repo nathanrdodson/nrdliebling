@@ -19,14 +19,7 @@
   h6 {
     color: var(--titles-color);
     line-height: 1.3;
-    font-weight: 700;
-    padding-top: 5px;
-    margin: 0 0 30px;
-
-    @include respond-to("medium") {
-      padding-top: 10px;
-      margin-bottom: 40px;
-    }
+    font-weight: 600;
   }
 
   h1 {
@@ -41,7 +34,7 @@
     font-size: 1.75rem;
 
     @include respond-to("medium") {
-      font-size: 2.25rem;
+      font-size: 2.4rem;
     }
   }
 
@@ -81,13 +74,10 @@
     letter-spacing: 0.2px;
     line-height: 1.5;
     font-size: 1.125rem;
-    margin-bottom: 25px;
 
     @include respond-to("medium") {
-      letter-spacing: 0.3px;
       line-height: 1.6;
       font-size: 1.25rem;
-      margin-bottom: 30px;
     }
 
     img {

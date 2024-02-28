@@ -136,20 +136,7 @@ i.icon-xl {
 .l-post-content h6 {
   color: var(--titles-color);
   line-height: 1.3;
-  font-weight: 700;
-  padding-top: 5px;
-  margin: 0 0 30px;
-}
-@media only screen and (min-width: 48rem) {
-  .l-post-content h1,
-.l-post-content h2,
-.l-post-content h3,
-.l-post-content h4,
-.l-post-content h5,
-.l-post-content h6 {
-    padding-top: 10px;
-    margin-bottom: 40px;
-  }
+  font-weight: 600;
 }
 .l-post-content h1 {
   font-size: 2.125rem;
@@ -164,7 +151,7 @@ i.icon-xl {
 }
 @media only screen and (min-width: 48rem) {
   .l-post-content h2 {
-    font-size: 2.25rem;
+    font-size: 2.4rem;
   }
 }
 .l-post-content h3 {
@@ -203,14 +190,11 @@ i.icon-xl {
   letter-spacing: 0.2px;
   line-height: 1.5;
   font-size: 1.125rem;
-  margin-bottom: 25px;
 }
 @media only screen and (min-width: 48rem) {
   .l-post-content p {
-    letter-spacing: 0.3px;
     line-height: 1.6;
     font-size: 1.25rem;
-    margin-bottom: 30px;
   }
 }
 .l-post-content p img {
