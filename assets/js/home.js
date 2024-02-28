@@ -19,7 +19,6 @@ __webpack_require__.r(__webpack_exports__);
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   var $featuredSlider = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-featured-slider');
-
   if ($featuredSlider.length > 0) {
     var numSlides = $featuredSlider.find('.swiper-slide').length;
     var featuredSwiper = new swiper__WEBPACK_IMPORTED_MODULE_2__["default"]('.js-featured-slider', {
@@ -35,12 +34,10 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
         }
       }
     });
-
     if (numSlides === 1) {
       $featuredSlider.find('.js-featured-slider-button').remove();
     }
   }
-
   (0,shave__WEBPACK_IMPORTED_MODULE_1__["default"])('.js-featured-article-title', 200);
 });
 

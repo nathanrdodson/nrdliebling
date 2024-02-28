@@ -640,199 +640,20 @@ textarea,
   }
 }
 
-/** Icons */
-[class^=icon-], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon" !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+i.icon-sm {
+  font-size: 0.75em;
 }
 
-.icon-moon:before {
-  content: "\e90f";
+i.icon-md {
+  font-size: 1.25em;
 }
 
-.icon-sunny:before {
-  content: "\e910";
+i.icon-lg {
+  font-size: 1.5em;
 }
 
-.icon-chevron-down:before {
-  content: "\e900";
-}
-
-.icon-star:before {
-  content: "\e901";
-}
-
-.icon-arrow-left:before {
-  content: "\e902";
-}
-
-.icon-arrow-right:before {
-  content: "\e903";
-}
-
-.icon-arrow-top:before {
-  content: "\e904";
-}
-
-.icon-close:before {
-  content: "\e905";
-}
-
-.icon-comments:before {
-  content: "\e906";
-}
-
-.icon-facebook:before {
-  content: "\e907";
-}
-
-.icon-globe:before {
-  content: "\e908";
-}
-
-.icon-menu:before {
-  content: "\e909";
-}
-
-.icon-more:before {
-  content: "\e90a";
-}
-
-.icon-search:before {
-  content: "\e90b";
-}
-
-.icon-twitter:before {
-  content: "\e90c";
-}
-
-.icon-imdb:before {
-  content: "\e90d";
-}
-
-.icon-vk:before {
-  content: "\e90e";
-}
-
-.icon-steam:before {
-  content: "\e914";
-}
-
-.icon-twitch:before {
-  content: "\e915";
-}
-
-.icon-youtube:before {
-  content: "\e916";
-}
-
-.icon-vimeo:before {
-  content: "\e917";
-}
-
-.icon-whatsapp:before {
-  content: "\e918";
-}
-
-.icon-reddit:before {
-  content: "\e919";
-}
-
-.icon-rss:before {
-  content: "\e91a";
-}
-
-.icon-spotify:before {
-  content: "\e91b";
-}
-
-.icon-telegram:before {
-  content: "\e91c";
-}
-
-.icon-soundcloud:before {
-  content: "\e91d";
-}
-
-.icon-flickr:before {
-  content: "\e91e";
-}
-
-.icon-letterboxd:before {
-  content: "\e91f";
-}
-
-.icon-odnoklassniki:before {
-  content: "\e920";
-}
-
-.icon-pinterest:before {
-  content: "\e921";
-}
-
-.icon-tiktok:before {
-  content: "\e922";
-}
-
-.icon-tumblr:before {
-  content: "\e923";
-}
-
-.icon-xing:before {
-  content: "\e924";
-}
-
-.icon-mixcloud:before {
-  content: "\e925";
-}
-
-.icon-mixer:before {
-  content: "\e926";
-}
-
-.icon-wechat:before {
-  content: "\e927";
-}
-
-.icon-deviantart:before {
-  content: "\e928";
-}
-
-.icon-discord:before {
-  content: "\e929";
-}
-
-.icon-instagram:before {
-  content: "\e92a";
-}
-
-.icon-linkedin:before {
-  content: "\e92b";
-}
-
-.icon-snapchat:before {
-  content: "\e92c";
-}
-
-.icon-gitlab:before {
-  content: "\e92d";
-}
-
-.icon-github:before {
-  content: "\e930";
-}
-
-.icon-behance:before {
-  content: "\e951";
+i.icon-xl {
+  font-size: 2em;
 }
 
 /** Global styles */
@@ -843,8 +664,9 @@ body {
   min-height: 100vh;
   color: var(--primary-foreground-color);
   font-size: 1rem;
-  font-family: "Rubik", Helvetica, Arial, sans-serif;
-  font-display: swap;
+  font-family: "pt-sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   overflow-x: hidden;
   background-color: var(--background-color);
   padding-top: var(--announcement-bar-height);
@@ -2086,6 +1908,9 @@ div.gh-announcement-bar {
 }
 
 .m-header {
+  font-family: "bc-alphapipe", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   position: fixed;
   top: 0;
   left: 0;
@@ -2342,14 +2167,19 @@ div.gh-announcement-bar {
 .m-nav__right {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
-.m-nav__right i {
-  padding-left: 10px;
+.m-nav__right a {
+  display: flex;
+}
+.m-nav__right a i {
+  padding: 0 7px;
+  font-size: 1.5em;
 }
 @media only screen and (min-width: 48rem) {
   .m-nav__right {
     flex-shrink: 0;
+    justify-content: flex-end;
     position: relative;
     padding-left: 20px;
     padding-right: 5px;

@@ -33,7 +33,6 @@ var formatDate = function formatDate(date) {
       day: 'numeric'
     });
   }
-
   return '';
 };
 var getParameterByName = function getParameterByName(name, url) {
@@ -47,7 +46,6 @@ var getParameterByName = function getParameterByName(name, url) {
 };
 var adjustImageGallery = function adjustImageGallery() {
   var images = document.querySelectorAll('.kg-gallery-image img');
-
   for (var i = 0, len = images.length; i < len; i++) {
     var container = images[i].closest('.kg-gallery-image');
     var width = images[i].attributes.width.value;
@@ -68,7 +66,6 @@ var makeImagesZoomable = function makeImagesZoomable($, mediumZoom) {
   zoom.on('opened', function () {
     setTimeout(function () {
       var $mediumZoomImages = $('.medium-zoom-image--opened');
-
       if ($mediumZoomImages.length > 1) {
         $mediumZoomImages.last().hide();
       }

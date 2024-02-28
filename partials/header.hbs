@@ -5,7 +5,7 @@ This header template is shared across all the pages.
 <header class="m-header {{#if background}}with-picture{{/if}} js-header"  data-animate="fade-down">
   <div class="m-mobile-topbar">
     <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="{{t "Open menu"}}">
-      <span class="icon-menu" aria-hidden="true"></span>
+      <i class="iconoir-menu icon-md" aria-hidden="true"></i>
     </button>
     {{#if @site.logo}}
       <a href="{{@site.url}}" class="m-logo in-mobile-topbar">
@@ -25,8 +25,8 @@ This header template is shared across all the pages.
   </div>
 
   <div class="m-menu js-menu">
-    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="{{t "Close menu"}}">
-      <span class="icon-close"></span>
+    <button class="m-icon-button as-close-menu js-close-menu" aria-label="{{t "Close menu"}}">
+      <i class="iconoir-xmark icon-xl"></i>
     </button>
     <div class="m-menu__main">
       <div class="l-wrapper">
@@ -49,22 +49,14 @@ This header template is shared across all the pages.
                   </a>
                 </li>
               {{/if}}
+			  
               {{#if @site.navigation}}
                 {{navigation}}
               {{/if}}
-              {{#if @site.secondary_navigation}}
-                <li class="more">
-                  <span>
-                    <a href="javascript:void(0);" class="js-open-secondary-menu">
-                      {{t "More"}}
-                      <span class="icon-chevron-down" aria-hidden="true"></span>
-                    </a>
-                  </span>
-                </li>
-              {{/if}}
+
               <li class="submenu-option js-submenu-option">
                 <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="{{t "Open submenu"}}">
-                  <span class="icon-more" aria-hidden="true"></span>
+                  <i class="iconoir-pacman" aria-hidden="true"></i>
                 </button>
                 <div class="m-submenu js-submenu">
                   <div class="l-wrapper in-submenu">
@@ -98,6 +90,7 @@ This header template is shared across all the pages.
                         {{/if}}
                       {{/get}}
                     </section>
+					{{!-- get tags list, max 10 --}}
                     <section class="m-tags">
                       <h3 class="m-submenu-title">{{t "Tags"}}</h3>
                       {{#get "tags" limit="10"}}
@@ -118,27 +111,18 @@ This header template is shared across all the pages.
             </ul>
           </nav>
           <div class="m-nav__right">
-			<a href="https://www.github.com/nathanrdodson">
-				<i class="fa-brands fa-square-letterboxd fa-lg"></i>
+			<a href="https://www.letterboxd.com/nathanrdodson">
+				<i class="iconoir-movie"></i>
 			</a>
 			<a href="https://www.github.com/nathanrdodson">
-				<i class="fa-brands fa-github fa-lg"></i>
+				<i class="iconoir-github"></i>
 			</a>
 			<a href="https://www.stats.fm/nrd">
-				<i class="fa-brands fa-spotify fa-lg"></i>
+				<i class="iconoir-spotify"></i>
 			</a>
-            <button class="m-icon-button in-menu-main {{^if @custom.enable_native_search}}js-open-search{{/if}}" {{#if @custom.enable_native_search}}data-ghost-search{{/if}} aria-label="{{t "Open search"}}">
-              <span class="icon-search" aria-hidden="true"></span>
-            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  {{#if @site.secondary_navigation}}
-    <div id="secondary-navigation-template" style="display: none;">
-      {{navigation type="secondary"}}
-    </div>
-  {{/if}}
 </header>

@@ -19,39 +19,12 @@
     {{!-- This #block helper will try to preload page-specific assets --}}
     {{{block "preload"}}}
 
-    {{!-- Styles & Scripts --}}
-    <style>
-      /* These font-faces are here to make fonts work if the Ghost instance is installed in a subdirectory */
-
-      /* rubik */
-      @font-face {
-        font-family: 'Rubik';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url("{{asset 'fonts/rubik/rubik.ttf'}}") format('truetype');
-      }
-
-      /* iconmoon */
-      @font-face {
-        font-family: 'icomoon';
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-        src: url("{{asset 'fonts/icomoon/icomoon.eot?101fc3'}}");
-        src: url("{{asset 'fonts/icomoon/icomoon.eot?101fc3#iefix'}}") format('embedded-opentype'),
-        url("{{asset 'fonts/icomoon/icomoon.ttf?101fc3'}}") format('truetype'),
-        url("{{asset 'fonts/icomoon/icomoon.woff?101fc3'}}") format('woff'),
-        url("{{asset 'fonts/icomoon/icomoon.svg?101fc3#icomoon'}}") format('svg');
-      }
-    </style>
-
+	{{!-- styles / scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}" media="screen" />
 
-	<link rel="stylesheet" type="text/css" href="{{asset "fonts/fontawesome/css/fontawesome.css"}}" media="screen" />
-	<link rel="stylesheet" type="text/css" href="{{asset "fonts/fontawesome/css/brands.css"}}" media="screen" />
-	<link rel="stylesheet" type="text/css" href="{{asset "fonts/fontawesome/css/solid.css"}}" media="screen" />
-
+	{{!-- fonts / icons --}}
+	<link rel="stylesheet" href="https://use.typekit.net/eyj8xkd.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" />
 
     {{!-- This #block helper will inject a stylesheet for a specific page --}}
     {{{block "styles"}}}

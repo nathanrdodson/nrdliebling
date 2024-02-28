@@ -33,7 +33,6 @@ var formatDate = function formatDate(date) {
       day: 'numeric'
     });
   }
-
   return '';
 };
 var getParameterByName = function getParameterByName(name, url) {
@@ -47,7 +46,6 @@ var getParameterByName = function getParameterByName(name, url) {
 };
 var adjustImageGallery = function adjustImageGallery() {
   var images = document.querySelectorAll('.kg-gallery-image img');
-
   for (var i = 0, len = images.length; i < len; i++) {
     var container = images[i].closest('.kg-gallery-image');
     var width = images[i].attributes.width.value;
@@ -68,7 +66,6 @@ var makeImagesZoomable = function makeImagesZoomable($, mediumZoom) {
   zoom.on('opened', function () {
     setTimeout(function () {
       var $mediumZoomImages = $('.medium-zoom-image--opened');
-
       if ($mediumZoomImages.length > 1) {
         $mediumZoomImages.last().hide();
       }
@@ -108,12 +105,10 @@ var lastWindowHeight = 0;
 var lastDocumentHeight = 0;
 var circumference = 0;
 var isTicking = false;
-
 var onScrolling = function onScrolling() {
   lastScrollingY = window.pageYOffset;
   requestTicking();
 };
-
 var adjustShare = function adjustShare(timeout) {
   if (!(0,_helpers__WEBPACK_IMPORTED_MODULE_5__.isMobile)('1023px')) {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('share-menu-displayed');
@@ -124,7 +119,6 @@ var adjustShare = function adjustShare(timeout) {
     }, timeout);
   }
 };
-
 var onResizing = function onResizing() {
   setHeights();
   adjustShare(100);
@@ -133,31 +127,24 @@ var onResizing = function onResizing() {
     requestTicking();
   }, 200);
 };
-
 var requestTicking = function requestTicking() {
   if (!isTicking) {
     requestAnimationFrame(updating);
   }
-
   isTicking = true;
 };
-
 var updating = function updating() {
   var progressMax = lastDocumentHeight - lastWindowHeight;
   var percent = Math.ceil(lastScrollingY / progressMax * 100);
-
   if (percent <= 100) {
     setProgress(percent);
   }
-
   isTicking = false;
 };
-
 var setHeights = function setHeights() {
   lastWindowHeight = window.innerHeight;
   lastDocumentHeight = jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).height();
 };
-
 var setCircleStyles = function setCircleStyles() {
   var svgWidth = $progressCircle.parent().width();
   var radiusCircle = svgWidth / 2;
@@ -171,14 +158,12 @@ var setCircleStyles = function setCircleStyles() {
   $progressCircle[0].style.strokeDasharray = "".concat(circumference, " ").concat(circumference);
   $progressCircle[0].style.strokeDashoffset = circumference;
 };
-
 var setProgress = function setProgress(percent) {
   if (percent <= 100) {
     var offset = circumference - percent / 100 * circumference;
     $progressCircle[0].style.strokeDashoffset = offset;
   }
 };
-
 var prepareProgressCircle = function prepareProgressCircle() {
   $progressCircle = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-progress');
   setHeights();
@@ -188,7 +173,6 @@ var prepareProgressCircle = function prepareProgressCircle() {
     $progressCircle.parent().css('opacity', 1);
   }, 300);
 };
-
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   $animationWrapper = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-animation-wrapper');
   var $scrollButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-scrolltop');
@@ -196,7 +180,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   fitvids__WEBPACK_IMPORTED_MODULE_1___default()('.js-post-content');
   (0,_helpers__WEBPACK_IMPORTED_MODULE_5__.adjustImageGallery)();
   adjustShare(1000);
-
   if ($recommendedSlider.length > 0) {
     var recommendedSwiper = new swiper__WEBPACK_IMPORTED_MODULE_3__["default"]('.js-recommended-slider', {
       modules: [swiper__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_3__.A11y],
@@ -228,7 +211,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
       }
     });
   }
-
   (0,shave__WEBPACK_IMPORTED_MODULE_2__["default"])('.js-article-card-title', 100);
   (0,shave__WEBPACK_IMPORTED_MODULE_2__["default"])('.js-article-card-title-no-image', 250);
   $scrollButton.on('click', function () {
