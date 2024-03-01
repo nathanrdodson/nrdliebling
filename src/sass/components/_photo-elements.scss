@@ -18,9 +18,29 @@ $padding: calc(8px + 1.5625vw);
 	}
 }
 
-.gallery-item:hover {
-	.gallery-annotation {
-		opacity: 1;
+.grainy {
+	position: absolute;
+	width: calc(100% - $padding - $padding);
+	height: calc(100% - $padding - $padding);
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.grain-inner {
+		display: none;	
+	}
+}
+
+.grainy:hover {
+	background-color: rgb(0, 0, 0, 0.8);
+	transition: background-color 0.15s;
+
+	.grain-inner {
+		display: flex;
+		flex-direction: column;
+		animation: fadeDownAnimation 0.3s;
 	}
 }
 
