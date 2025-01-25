@@ -10,7 +10,12 @@
 			</style>
 			<div class="gallery-item" data-animate='fade-up'>
 				<a href="/{{slug}}">
-					<div class="grainy">{{ title }}</div>
+					<div class="grainy">
+						<div class="grain-inner">
+							<h2>{{title}}</h2>
+							<p>{{date}}</p>
+						</div>
+					</div>
 					<img id="featured-bg-{{id}}"></img>
 				</a>
 			</div>
