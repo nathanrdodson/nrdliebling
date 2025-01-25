@@ -9,7 +9,10 @@
 				#featured-bg-{{id}} { content: url({{img_url feature_image}});}
 			</style>
 			<div class="gallery-item" data-animate='fade-up'>
-				<a href="/{{slug}}"><img id="featured-bg-{{id}}"></img></a>
+				<a href="/{{slug}}">
+					<div class="grainy">{{ title }}</div>
+					<img id="featured-bg-{{id}}"></img>
+				</a>
 			</div>
 		{{/foreach}}
 	</div>

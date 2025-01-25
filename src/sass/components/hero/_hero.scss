@@ -39,12 +39,17 @@
   }
 
   img {
-    width: 100%;
+	// in feature-image for posts, lock height and width to fit within the viewport
+	// This is so that tall images are in full-view on desktops
+	max-height: 75vh;
+	max-width: 95vw;
+	width: auto;
     object-fit: cover;
   }
 }
 
 .m-hero__content {
+
   position: relative;
   text-align: center;
   padding: 0 $mobile-space;

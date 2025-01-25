@@ -6,6 +6,7 @@ $padding: calc(8px + 1.5625vw);
 	@media screen and (min-width: 1200px) {
 		columns: 2 auto;
 	}
+
 	columns: 1 auto;
 	column-gap: 0;
 }
@@ -18,10 +19,18 @@ $padding: calc(8px + 1.5625vw);
 	}
 }
 
-.gallery-item:hover {
-	.gallery-annotation {
-		opacity: 1;
-	}
+.grainy {
+	position: absolute;
+	width: calc(100% - $padding - $padding);
+	height: calc(100% - $padding - $padding);
+	opacity: 0%;
+}
+
+.grainy:hover {
+	transition: opacity .3s;
+	opacity: 100%;
+	background-image: url('../grain.svg#grain');
+	filter: grayscale(0.6) sepia(0.2) brightness(0.85) blur(.3px                 );
 }
 
 .gallery-blurb-title {
