@@ -4,14 +4,16 @@
   position: relative;
   margin-bottom: 20px;
   height: 400px;
-  background-color: var(--background-color);
+  background-color: var(--surface-color);
   border-radius: 10px;
   border: 1px solid var(--secondary-border-color);
+  box-shadow: inset 3px 0 0 transparent;
   z-index: 1;
   @include transition(all .25s cubic-bezier(.02,.01,.47,1));
 
   &:hover {
-    @include transform(translateY(-5px));
+    @include transform(translateY(-4px));
+    box-shadow: inset 3px 0 0 var(--accent-color), var(--article-shadow-hover);
 
     &:before {
       @include bs(var(--article-shadow-hover));
@@ -197,7 +199,7 @@
   height: 200px;
   overflow: hidden;
   border-radius: 0 0 10px 10px;
-  background-color: var(--background-color);
+  background-color: var(--surface-color);
 
   @include respond-to('medium') {
     padding-top: 53px;

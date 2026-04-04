@@ -9,9 +9,10 @@ body {
   
   // set global fonts
   // see adobe cdn definition in default.hbs
-  font-size: 1rem;
+  font-size: 1.0625rem;
   font-family: "noto-sans", sans-serif;
   font-style: normal;
+  line-height: 1.7;
   
   overflow-x: hidden;
   background-color: var(--background-color);
@@ -36,7 +37,7 @@ body {
 }
 
 p {
-  line-height: 1.5;
+  line-height: 1.75;
   margin: 0;
 }
 

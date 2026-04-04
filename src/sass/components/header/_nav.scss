@@ -53,8 +53,9 @@
 
   li {
     color: var(--titles-color);
-    letter-spacing: 0.3px;
-    font-size: 1.125rem;
+    letter-spacing: 0.8px;
+    font-size: 1rem;
+    text-transform: uppercase;
     margin-bottom: 15px;
 
     @include respond-to('medium') {
@@ -73,6 +74,11 @@
 
     a {
       color: inherit;
+      @include transition(color 0.2s ease);
+
+      &:hover {
+        color: var(--accent-color);
+      }
     }
 
     &.more {
