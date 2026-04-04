@@ -1,14 +1,20 @@
-name: Deploy Theme
+name: Deploy Ghost Theme
+
 on:
   push:
     branches:
-      - main
+      - version-2.0
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Deploy Ghost Theme
+      - uses: actions/checkout@v4
+
+      - name: Zip theme
+        run: zip -r theme.zip . -x "*.git*" "node_modules/*" ".github/*"
+
+      - name: Deploy to Ghost
         uses: TryGhost/action-deploy-theme@v1
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
