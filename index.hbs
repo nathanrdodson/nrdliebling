@@ -31,9 +31,7 @@ into the {body} of the default.hbs template --}}
 	<div class="l-content">
 		<div class="l-wrapper">
 			<section class="m-articles-grid l-grid" data-animate="fade-up">
-				{{#foreach posts}}
-					{{> loop}}
-				{{/foreach}}
+				{{> loop}}
 			</section>
 			{{> pagination}}
 		</div>
