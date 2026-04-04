@@ -1,0 +1,40 @@
+{{!--
+Template for the Career / Work History page.
+Create a Ghost page with the slug "career" to activate this template.
+--}}
+
+{{#contentFor "preload"}}
+  <link rel="preload" href="{{asset "css/career.css"}}" as="style" />
+{{/contentFor}}
+
+{{#contentFor "styles"}}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/career.css"}}" media="screen" />
+{{/contentFor}}
+
+{{!< default}}
+
+{{#post}}
+  {{> header}}
+{{/post}}
+
+<main class="main-wrap">
+  <div class="l-content">
+    <div class="l-wrapper">
+      <div class="c-career" data-animate="fade-up">
+        <header class="c-career__header">
+          <h1 class="c-career__name">Nathan Dodson</h1>
+          <p class="c-career__title">IT Director &bull; Software Engineer &bull; MBA</p>
+          <div class="c-career__contact">
+            <a href="mailto:nathanrdodson@gmail.com">nathanrdodson@gmail.com</a>
+            <span>&bull;</span>
+            <a href="https://linkedin.com/in/nathanrdodson" target="_blank" rel="noopener">linkedin.com/in/nathanrdodson</a>
+            <span>&bull;</span>
+            <a href="https://github.com/nathanrdodson" target="_blank" rel="noopener">github.com/nathanrdodson</a>
+          </div>
+        </header>
+
+        {{> career}}
+      </div>
+    </div>
+  </div>
+</main>
