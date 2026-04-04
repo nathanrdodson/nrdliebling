@@ -89,6 +89,46 @@ nrdliebling/
 - Node.js 18+
 - Ghost CLI
 
+### macOS Setup
+
+1. Install prerequisites via Homebrew if you don't have them:
+   ```bash
+   brew install node
+   npm install -g ghost-cli@latest
+   ```
+
+2. Clone the theme repo:
+   ```bash
+   git clone https://github.com/nathanrdodson/nrdliebling.git
+   ```
+
+3. Set up a local Ghost install in a separate directory:
+   ```bash
+   mkdir ghost-dev && cd ghost-dev
+   ghost install local
+   ```
+
+4. Load sample content:
+   ```bash
+   curl -L https://go.nrdnas.net/web/client/pubshares/qt7wmNFn5WaVy45akg2vxS -o sample.zip && \
+   unzip sample.zip && \
+   mv .permalinks/ghost_images_sample.v5.62/* ./content/images/ && \
+   mv .permalinks/ghost_posts_sample.v5.62.json . && \
+   rm -r .permalinks sample.zip
+   ```
+
+5. Symlink the theme into Ghost:
+   ```bash
+   ln -s ../../../nrdliebling content/themes/nrdliebling
+   ```
+
+6. Restart Ghost:
+   ```bash
+   ghost restart
+   ```
+
+Ghost admin will be at `http://localhost:2368/ghost`. BrowserSync (during `npm run watch`) proxies to `http://localhost:3000`.
+
 ### WSL2 Setup
 
 1. Clone the theme repo:
