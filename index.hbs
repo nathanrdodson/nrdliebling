@@ -26,6 +26,19 @@ into the {body} of the default.hbs template --}}
 <main class="main-wrap">
 	{{!-- 'profile' requires a post with the slug '/nathan' --}}
 	{{> profile}}
+
+	{{#if posts}}
+	<div class="l-content">
+		<div class="l-wrapper">
+			<section class="m-articles-grid l-grid" data-animate="fade-up">
+				{{#foreach posts}}
+					{{> loop}}
+				{{/foreach}}
+			</section>
+			{{> pagination}}
+		</div>
+	</div>
+	{{/if}}
 </main>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}

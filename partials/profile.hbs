@@ -20,21 +20,15 @@
 {{/contentFor}}
 
 {{#get "posts" slug="nathan" as |post|}}
-	<article>
-		<div class="pad"></div>
-		<div class="l-content in-post">
+	<section class="m-profile">
+		<div class="l-wrapper">
 			{{#post}}
-			<div class="l-wrapper in-post js-animation-wrapper">
-				<div class="l-post-content js-progress-content">
-					<div class="pos-relative js-post-content">
-						<img class="img-container" src="{{asset 'images/profile.webp'}}"/>
-						{{content}}
-					</div>
-				</div>
+			<div class="m-profile__content">
+				{{content}}
 			</div>
 			{{/post}}
 		</div>
-	</article>
+	</section>
 {{/get}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
