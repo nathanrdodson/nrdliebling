@@ -27,16 +27,20 @@ into the {body} of the default.hbs template --}}
 	{{!-- 'profile' requires a post with the slug '/nathan' --}}
 	{{> profile}}
 
-	{{#if posts}}
-	<div class="l-content">
-		<div class="l-wrapper">
-			<section class="m-articles-grid l-grid" data-animate="fade-up">
-				{{> loop}}
-			</section>
-			{{> pagination}}
+	{{#get "posts" filter="tag:-hash-hidden" limit=@config.posts_per_page include="tags,authors"}}
+		{{#if posts}}
+		<div class="l-content">
+			<div class="l-wrapper">
+				<section class="m-articles-grid l-grid" data-animate="fade-up">
+					{{> loop}}
+				</section>
+				{{#if pagination.pages}}
+					{{> pagination}}
+				{{/if}}
+			</div>
 		</div>
-	</div>
-	{{/if}}
+		{{/if}}
+	{{/get}}
 </main>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
